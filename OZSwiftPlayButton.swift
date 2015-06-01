@@ -120,6 +120,7 @@ class OZSwiftPlayButton : UIButton {
             backgroundColor = UIColor.whiteColor()
         }
         if !selected {
+            layer.borderWidth = 0
             tintColor?.setStroke()
             tintColor?.setFill()
             let triangle = UIBezierPath()
@@ -131,6 +132,8 @@ class OZSwiftPlayButton : UIButton {
             triangle.fill()
         }
         else {
+            layer.borderWidth = 2.0
+            layer.borderColor = tintColor?.CGColor
             tintColor?.setFill()
             tintColor?.setStroke()
             let backGround = UIBezierPath(arcCenter: CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2), radius: self.frame.size.width / 2, startAngle: 0, endAngle: degreesToRadians(degree: 360), clockwise: true)
